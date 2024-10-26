@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const whitelist = ['http://localhost:8080', 'https://myapp.co'];
+const whitelist = ['http://localhost:8080', 'https://myapp.co', 'http://localhost:5173'];
 const options = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin) {
@@ -25,7 +25,7 @@ app.use(cors(options));
 require('./utils/auth');
 
 app.get('/', (req, res) => {
-  res.send('Hola mi server en express');
+  res.send('Express server');
 });
 
 app.get('/nueva-ruta', checkApiKey, (req, res) => {
@@ -41,5 +41,5 @@ app.use(errorHandler);
 
 
 app.listen(port, () => {
-  console.log(`Mi port ${port}`);
+  console.log(`My port ${port}`);
 });

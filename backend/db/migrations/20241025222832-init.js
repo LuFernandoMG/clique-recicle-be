@@ -123,6 +123,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DataTypes.STRING,
       },
+      price: {
+        allowNull: true,
+        type: Sequelize.DataTypes.DECIMAL(10, 2),
+      },
+      status: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING,
+      },
       itemType: {
         field: 'item_type',
         allowNull: false,

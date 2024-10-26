@@ -16,6 +16,14 @@ const OrderSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
+  price: {
+    allowNull: true,
+    type: DataTypes.DECIMAL(10, 2),
+  },
+  status: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
   itemType: {
     field: 'item_type',
     allowNull: false,
